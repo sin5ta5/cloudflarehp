@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Geek Den｜大岡山駅周辺に近日OPEN 月額5,980円〜通い放題の無人ボードゲームカフェ</title>
-<meta name="description" content="大岡山駅周辺に近日オープン予定のGeek Den（ギークデン）は、月額5,980円〜で通い放題の無人ボードゲームカフェ。営業時間7:00〜23:00。コーヒー無料、Wi-Fi・電源完備でPC作業もOK。豪華ボードゲーム専用テーブル、個人ボードゲームの保管スペースあり。会員1名につきゲスト3名まで招待OK。先着50名、入会金0円・初月会費半額のオープニングキャンペーン実施予定。">
+<meta name="description" content="大岡山駅周辺に近日オープン予定のGeek Den（ギークデン）は、月額5,980円〜で通い放題の無人ボードゲームカフェ。営業時間7:00〜23:00。コーヒー無料、Wi-Fi・電源完備でPC作業もOK。豪華ボードゲーム専用テーブル、個人ボードゲームの保管スペースあり。対戦結果からゲームごとのレーティングとランキングが分かる店内レーティングシステム付き。会員1名につきゲスト3名まで招待OK。先着50名、入会金0円・初月会費半額のオープニングキャンペーン実施予定。">
 <link rel="canonical" href="https://www.geekden.jp/">
 <meta name="theme-color" content="#1f3a2e">
 
@@ -32,7 +32,7 @@
   "@type": "EntertainmentBusiness",
   "name": "Geek Den",
   "alternateName": "ギークデン",
-  "description": "大岡山駅周辺に近日オープン予定。月額5,980円〜で通い放題の無人ボードゲームカフェ（ボードゲームラウンジ）。コーヒー無料、Wi-Fi・電源完備、ボードゲーム専用テーブル、ボードゲーム保管スペースあり。",
+  "description": "大岡山駅周辺に近日オープン予定。月額5,980円〜で通い放題の無人ボードゲームカフェ（ボードゲームラウンジ）。コーヒー無料、Wi-Fi・電源完備、ボードゲーム専用テーブル、ボードゲーム保管スペース、店内レーティングシステムあり。",
   "url": "https://www.geekden.jp/",
   "image": "https://www.geekden.jp/images/ogp.png?v=20261121b",
   "priceRange": "月額5,980円〜",
@@ -68,6 +68,8 @@
      "acceptedAnswer": {"@type": "Answer", "text": "7:00〜23:00です。朝の授業前や仕事帰りの夜にもご利用いただけます。"}},
     {"@type": "Question", "name": "ボードゲームをしない日に作業スペースとして使えますか？",
      "acceptedAnswer": {"@type": "Answer", "text": "はい。Wi-Fi・電源完備でPC作業もOKです。コーヒーも無料でお飲みいただけます。"}},
+    {"@type": "Question", "name": "レーティングシステムとは何ですか？",
+     "acceptedAnswer": {"@type": "Answer", "text": "会員どうしの対戦結果から、ゲームごとに腕前を数字で表す仕組みです。遊び終わったら結果をスマホで登録すると、レーティングが自動で上下し、ゲームごとのランキングと段位で確認できます。ゲストはレーティングの対象外です。"}},
     {"@type": "Question", "name": "自分のボードゲームを置いておけますか？",
      "acceptedAnswer": {"@type": "Answer", "text": "はい。個人所有のボードゲームを保管できる棚を月額2,000円でご用意しています。置いたゲームをほかの会員に貸し出すと、1回ごとに棚利用料が安くなります。"}}
   ]
@@ -214,6 +216,33 @@ section{padding:80px 0}
 
 .soon-note{display:inline-block;margin-top:22px;padding:10px 22px;border:2px dashed var(--accent);border-radius:999px;color:var(--accent);font-weight:900}
 .soon-note.light{border-color:#fff;color:#fff}
+/* rating */
+.rating{background:#1c2233;color:#fff}
+.rating .section-head p{color:rgba(255,255,255,.78)}
+.rating .section-head .kicker{color:var(--gold)}
+.rating-box{display:grid;gap:32px;align-items:start}
+@media (min-width:900px){.rating-box{grid-template-columns:1.05fr .95fr}}
+.rating-points{list-style:none;display:grid;gap:14px}
+.rating-points li{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius);padding:20px 22px}
+.rating-points h3{font-weight:900;font-size:1.12rem;color:var(--gold)}
+.rating-points p{font-size:.95rem;opacity:.86;margin-top:4px}
+.tiers{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tiers span{font-size:.78rem;font-weight:700;padding:2px 10px;border-radius:999px;background:rgba(255,255,255,.12)}
+.tiers span:last-child{background:var(--gold);color:#1c2233}
+.rank-card{background:var(--surface);color:var(--ink);border-radius:var(--radius);padding:20px;box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.rank-card .rc-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;border-bottom:2px solid var(--line);padding-bottom:10px;margin-bottom:6px}
+.rank-card .rc-head b{font-weight:900;font-size:1.05rem}
+.rank-card .rc-head small{color:var(--ink-soft);font-size:.78rem}
+.rank-row{display:grid;grid-template-columns:2em 1fr auto auto;gap:10px;align-items:center;padding:9px 4px;border-bottom:1px dashed var(--line);font-size:.92rem}
+.rank-row:last-of-type{border-bottom:0}
+.rank-row .no{font-weight:900;color:var(--ink-soft);text-align:center}
+.rank-row:nth-of-type(1) .no{color:#c9902a}
+.rank-row .tier{font-size:.72rem;font-weight:700;padding:1px 8px;border-radius:999px;background:#efe6d6;white-space:nowrap}
+.rank-row .pt{font-weight:900;font-variant-numeric:tabular-nums;text-align:right;min-width:3.2em}
+.rank-row.me{background:#fdebd9;border-radius:10px;border-bottom:0}
+.rank-row.me .pt{color:var(--accent)}
+.rank-row .up{font-size:.72rem;color:#2e7a52;font-weight:900;margin-left:4px}
+.rank-card .rc-note{font-size:.75rem;color:var(--ink-soft);margin-top:10px;text-align:right}
 /* space */
 .space-figure{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#2a2420}
 .space-figure img{width:100%;height:auto;background:#2b2622}
@@ -355,6 +384,7 @@ section{padding:80px 0}
     </a>
     <nav class="nav" aria-label="メインメニュー">
       <a class="nav-link" href="#features">特徴</a>
+      <a class="nav-link" href="#space">店内紹介</a>
       <a class="nav-link" href="#price">料金</a>
       <a class="nav-link" href="#howto">ご利用の流れ</a>
       <a class="nav-link" href="#faq">よくある質問</a>
@@ -456,13 +486,8 @@ section{padding:80px 0}
         </article>
         <article class="feature">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e2572b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h13v5a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17M8 2v3M12 2v3"/></svg></div>
-          <h3>コーヒー無料</h3>
-          <p>ゲームの合間にも、作業のお供にも。コーヒーは会員なら無料でお飲みいただけます。</p>
-        </article>
-        <article class="feature">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e2572b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20M9 8.5a4.5 4.5 0 0 1 6 0M10.5 11a2 2 0 0 1 3 0"/></svg></div>
-          <h3>Wi-Fi・電源完備／PC作業OK</h3>
-          <p>レポートや研究、リモートワークにも使える作業スペースとして。遊ぶ日も、働く日も、同じ場所で。</p>
+          <h3>コーヒー無料<br>Wi-Fi・電源完備／PC作業OK</h3>
+          <p>ゲームの合間にも、作業のお供にも。コーヒーは会員なら無料。レポートや研究、リモートワークの作業スペースとしても使えます。</p>
         </article>
         <article class="feature">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e2572b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="9" rx="2"/><path d="M5 15v5M19 15v5M6 10h12"/></svg></div>
@@ -479,6 +504,11 @@ section{padding:80px 0}
           <h3>ゲスト3名まで招待OK</h3>
           <p>会員1名につきゲスト3名まで（VIPプランは5名まで）一緒に遊べます。友達や家族を誘って、いつものメンバーで卓を囲めます。</p>
         </article>
+        <article class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e2572b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></svg></div>
+          <h3>店内レーティングで<br>腕前が見える</h3>
+          <p>対戦結果を登録すると、ゲームごとのレーティングとランキングに反映。遊ぶほど、ライバルとの差や自分の成長が分かります。<a href="#rating">詳しく見る</a></p>
+        </article>
       </div>
     </div>
   </section>
@@ -489,7 +519,7 @@ section{padding:80px 0}
       <div class="section-head">
         <p class="kicker">SPACE</p>
         <h2 id="space-title">店内のご紹介</h2>
-        <p>木のぬくもりと灯りに包まれた、ボードゲームのための空間。</p>
+        <p>大きなボードもゆったり広げられる専用テーブルに、すぐ手に取れるボドゲ棚。<br>余計なものは置かず、時間を忘れてボードゲームに没頭できる空間をつくりました。</p>
       </div>
       <figure class="space-figure">
         <img src="images/interior.jpg" width="1448" height="1086" loading="lazy"
@@ -556,6 +586,43 @@ section{padding:80px 0}
     </div>
   </section>
 
+  <!-- RATING -->
+  <section class="rating" id="rating" aria-labelledby="rating-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">RATING</p>
+        <h2 id="rating-title">遊ぶほど、腕前が見える。<br>店内レーティングシステム</h2>
+        <p>Geek Denでは、会員どうしの対戦結果から、ゲームごとのレーティングとランキングを出します。</p>
+      </div>
+      <div class="rating-box">
+        <ul class="rating-points">
+          <li>
+            <h3>ゲームごとにレーティング</h3>
+            <p>遊び終わったら、スマホで対戦結果を登録するだけ。チェスなどでも使われるイロレーティングを元にした方式で、勝てば上がり、負ければ下がります。強い相手に勝つほど大きく上がります。</p>
+          </li>
+          <li>
+            <h3>ランキングと段位</h3>
+            <p>ゲームごとの順位表で、店内のライバルとの差がひと目で分かります。レーティングに応じて段位も上がっていきます。</p>
+            <p class="tiers" aria-label="段位"><span>初心者</span><span>見習い</span><span>平均</span><span>上手</span><span>強い</span><span>エキスパート</span><span>マスター</span></p>
+          </li>
+          <li>
+            <h3>自分の対戦の記録</h3>
+            <p>これまでの対戦をマイページで振り返れます。協力ゲームは勝った数と勝率を記録。チーム戦にも対応しています。</p>
+          </li>
+        </ul>
+        <div class="rank-card" aria-label="ランキング画面の表示例">
+          <div class="rc-head"><b>ランキング</b><small>あるゲームの表示例</small></div>
+          <div class="rank-row"><span class="no">1</span><span>dice_king</span><span class="tier">マスター</span><span class="pt">712</span></div>
+          <div class="rank-row"><span class="no">2</span><span>meeple_s</span><span class="tier">エキスパート</span><span class="pt">538</span></div>
+          <div class="rank-row"><span class="no">3</span><span>boku_no_turn</span><span class="tier">強い</span><span class="pt">341</span></div>
+          <div class="rank-row me"><span class="no">4</span><span>あなた<span class="up">▲24</span></span><span class="tier">上手</span><span class="pt">226</span></div>
+          <div class="rank-row"><span class="no">5</span><span>kurage</span><span class="tier">平均</span><span class="pt">148</span></div>
+          <p class="rc-note">※画面はイメージです</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PRICE -->
   <section id="price" aria-labelledby="price-title">
     <div class="wrap">
@@ -610,6 +677,7 @@ section{padding:80px 0}
         <details><summary>会員以外の友達も一緒に遊べますか？</summary><p class="a">はい。会員1名につきゲスト3名まで（VIPプランは5名まで）招待できます。ゲスト利用料は1時間500円／人です。</p></details>
         <details><summary>営業時間は何時から何時までですか？</summary><p class="a">7:00〜23:00です。朝の授業前や仕事帰りの夜にもご利用いただけます。</p></details>
         <details><summary>ボードゲームをしない日に作業スペースとして使えますか？</summary><p class="a">はい。Wi-Fi・電源完備でPC作業もOKです。コーヒーも無料でお飲みいただけます。</p></details>
+        <details><summary>レーティングシステムとは何ですか？</summary><p class="a">会員どうしの対戦結果から、ゲームごとに腕前を数字で表す仕組みです。遊び終わったら結果をスマホで登録すると、レーティングが自動で上下し、ゲームごとのランキングと段位で確認できます。ゲストはレーティングの対象外です。</p></details>
         <details><summary>自分のボードゲームを置いておけますか？</summary><p class="a">はい。個人所有のボードゲームを保管できる棚を月額2,000円でご用意しています。置いたゲームをほかの会員に貸し出すと、1回ごとに棚利用料が安くなります。</p></details>
       </div>
     </div>
@@ -638,6 +706,7 @@ section{padding:80px 0}
     </div>
     <nav aria-label="フッターメニュー">
       <a href="#features">特徴</a>
+      <a href="#space">店内紹介</a>
       <a href="#price">料金</a>
       <a href="#howto">ご利用の流れ</a>
       <a href="#faq">よくある質問</a>
