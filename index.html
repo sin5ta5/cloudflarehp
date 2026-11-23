@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Geek Den｜好きなゲームから、仲間が増える。大岡山の会員制ボードゲームラウンジ</title>
-<meta name="description" content="好きなゲームから、仲間が増える。Geek Den（ギークデン）は大岡山駅周辺にオープン予定の会員制・無人ボードゲームラウンジ。遊びたいゲームで仲間を募集したり、気になるゲーム会に参加したり。参加専用の参加チケットプランは月額1,980円で6時間分、卓予約・主催不可。予約できる通い放題プランは月額5,980円〜、毎月チケット2枚付き。営業時間7:00〜23:00。">
+<meta name="description" content="好きなゲームから、仲間が増える。Geek Den（ギークデン）は大岡山駅周辺にオープン予定の会員制・無人ボードゲームラウンジ。遊びたいゲームで仲間を募集したり、気になるゲーム会に参加したり。参加専用の参加チケットプランは月額1,980円で6時間分、卓予約・主催不可。予約できる通い放題プランは月額5,980円〜、毎月チケット2枚付き。後ろの予約がなければ延長料金は無料。営業時間7:00〜23:00。">
 <link rel="canonical" href="https://www.geekden.jp/">
 <meta name="theme-color" content="#1f3a2e">
 
@@ -118,6 +118,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "はい。通い放題プランの会員は、1名につき非会員ゲスト3名まで（VIPは5名まで）招待できます。ゲスト利用は1時間500円／人です。通い放題プランには、ゲスト利用または自分の予約枠を超える追加予約に使えるチケットが毎月2枚（VIPは4枚）付いています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "遊んでいる途中で延長できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。次の時間にその卓の予約が入っていなければ、主催者がスマホから延長でき、延長料金はかかりません。主催者も、一緒に遊んでいる参加者やゲストも、追加料金なしで続けられます。延長は予約時間の開始後にでき、営業時間外には延長できません。"
       }
     },
     {
@@ -323,6 +331,17 @@ section{padding:80px 0}
 .rank-row.me .pt{color:var(--accent)}
 .rank-row .up{font-size:.72rem;color:#2e7a52;font-weight:900;margin-left:4px}
 .rank-card .rc-note{font-size:.75rem;color:var(--ink-soft);margin-top:10px;text-align:right}
+/* extend */
+.extend{margin-top:28px;display:grid;gap:18px;align-items:center;background:var(--surface);border:3px solid var(--gold);border-radius:var(--radius);padding:24px 22px;box-shadow:var(--shadow)}
+@media (min-width:760px){.extend{grid-template-columns:auto 1fr;padding:28px 34px;gap:28px}}
+.extend-badge{display:grid;place-items:center;text-align:center;width:150px;height:150px;margin-inline:auto;border-radius:50%;background:var(--accent);color:#fff;font-weight:900;line-height:1.25;box-shadow:0 6px 0 #a83d1b;transform:rotate(-4deg)}
+.extend-badge small{font-size:.85rem;display:block}
+.extend-badge strong{font-size:2.6rem;display:block;line-height:1.05}
+.extend h3{font-weight:900;font-size:clamp(1.2rem,3.6vw,1.5rem);line-height:1.45}
+.extend h3 em{font-style:normal;color:var(--accent)}
+.extend p{color:var(--ink-soft);margin-top:8px;font-size:.95rem}
+.extend .note{font-size:.8rem;margin-top:6px}
+.extend .extend-badge{color:#fff;margin-top:0;font-size:1rem}
 /* space */
 .space-figure{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#2a2420}
 .space-figure img{width:100%;height:auto;background:#2b2622}
@@ -643,6 +662,14 @@ section{padding:80px 0}
           <p>対戦結果を登録すると、ゲームごとのレーティングとランキングに反映。遊ぶほど、ライバルとの差や自分の成長が分かります。<a href="#rating">詳しく見る</a></p>
         </article>
       </div>
+      <div class="extend" id="extend">
+        <p class="extend-badge" aria-hidden="true"><span><small>延長料金</small><strong>0円</strong></span></p>
+        <div>
+          <h3>盛り上がったら、そのまま延長。<br>後ろの予約がなければ<em>延長料金は無料</em>です。</h3>
+          <p>「あと1戦だけ！」も気兼ねなく。次の時間にその卓の予約が入っていなければ、主催者がスマホから延長できます。主催者も、一緒に遊んでいる参加者やゲストも、追加料金なしでそのまま続けられます。</p>
+          <p class="note">※延長は予約時間の開始後にできます。営業時間外には延長できません。</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -796,19 +823,19 @@ section{padding:80px 0}
           <p class="catch">空いてるときならいくらでも</p>
           <h3>エコノミープラン</h3>
           <p class="fee">月額 <strong>5,980</strong>円</p>
-          <ul><li>通い放題・予約枠 2枠</li><li>毎月チケット2枚無料（ゲスト利用・追加予約）</li><li>ゲスト3名まで</li><li>Standard席は30日前から予約</li></ul>
+          <ul><li>通い放題・予約枠 2枠</li><li>毎月チケット2枚無料（ゲスト・追加枠）</li><li>ゲスト3名まで</li><li>Standard席は30日前から予約</li></ul>
         </article>
         <article class="plan">
           <p class="catch">いつでもボドゲ仲間が見つかる</p>
           <h3>スタンダードプラン</h3>
           <p class="fee">月額 <strong>8,980</strong>円</p>
-          <ul><li>通い放題・予約枠 4枠</li><li>毎月チケット2枚無料（ゲスト利用・追加予約）</li><li>ゲスト3名まで</li><li>Standard席・Premium席は30日前から予約</li></ul>
+          <ul><li>通い放題・予約枠 4枠</li><li>毎月チケット2枚無料（ゲスト・追加枠）</li><li>ゲスト3名まで</li><li>Standard席・Premium席は30日前から予約</li></ul>
         </article>
         <article class="plan vip">
           <p class="catch">高級椅子で長時間プレイ</p>
           <h3>VIP</h3>
           <p class="fee">月額 <strong>14,890</strong>円</p>
-          <ul><li>通い放題・予約枠 8枠</li><li>毎月チケット4枚無料（ゲスト利用・追加予約）</li><li>ゲスト5名まで</li><li>全席30日前から予約</li><li>VIP席の高級チェアでじっくり</li></ul>
+          <ul><li>通い放題・予約枠 8枠</li><li>毎月チケット4枚無料（ゲスト・追加枠）</li><li>ゲスト5名まで</li><li>全席30日前から予約</li><li>VIP席の高級チェアでじっくり</li></ul>
         </article>
       </div>
       <dl class="price-table">
@@ -817,6 +844,7 @@ section{padding:80px 0}
         <div class="price-row"><dt>初月会費</dt><dd>通い放題は半額<span class="cp">オープニングキャンペーン・先着50名限定。参加チケットは対象外</span></dd></div>
         <div class="price-row"><dt>非会員ゲスト利用</dt><dd>1時間 500円／人<span class="cp">通い放題プランにはゲスト・追加予約に使えるチケットが毎月2枚（VIPは4枚）</span></dd></div>
         <div class="price-row"><dt>ボードゲーム保管棚</dt><dd>月額 2,000円<span class="cp">貸し出すと1回ごとに割引</span></dd></div>
+        <div class="price-row"><dt>延長料金</dt><dd>0円<span class="cp">後ろの予約がなければ、主催者・参加者・ゲスト全員追加料金なし</span></dd></div>
         <div class="price-row"><dt>コーヒー・Wi-Fi</dt><dd>利用中は無料（全プラン共通）</dd></div>
       </dl>
       <p class="price-note">※通い放題プランの毎月の無料チケットは、ゲスト利用と予約枠を超える追加予約で共通です。追加予約でも席種・予約可能期間は各プランの条件に従います。参加チケットプランの6枚は、ゲーム会への参加に利用する時間チケットです。</p>
@@ -840,6 +868,7 @@ section{padding:80px 0}
         <details><summary>参加チケット会員はゲスト招待人数に含まれますか？</summary><p class="a">いいえ。参加チケット会員への招待は、非会員ゲストの招待人数枠とは別枠です。ただし、卓の物理的な定員は全参加者で共通です。</p></details>
         <details><summary>通い放題プランに付く無料チケットは何に使えますか？</summary><p class="a">通い放題プランには、毎月チケット2枚（VIPは4枚）を無料で付与します。チケットは非会員ゲストの利用（1枚につき1名・1時間）にも、ご自身の予約枠を使い切った後の追加の卓予約にも利用できます。追加予約の対象となる席・予約可能期間は、各プランの条件に従います。参加チケットプランの時間チケットとは用途が異なります。</p></details>
         <details><summary>会員以外の友達も一緒に遊べますか？</summary><p class="a">はい。通い放題プランの会員は、1名につき非会員ゲスト3名まで（VIPは5名まで）招待できます。ゲスト利用は1時間500円／人です。通い放題プランには、ゲスト利用または自分の予約枠を超える追加予約に使えるチケットが毎月2枚（VIPは4枚）付いています。</p></details>
+        <details><summary>遊んでいる途中で延長できますか？</summary><p class="a">はい。次の時間にその卓の予約が入っていなければ、主催者がスマホから延長でき、延長料金はかかりません。主催者も、一緒に遊んでいる参加者やゲストも、追加料金なしで続けられます。延長は予約時間の開始後にでき、営業時間外には延長できません。</p></details>
         <details><summary>営業時間は何時から何時までですか？</summary><p class="a">7:00〜23:00です。</p></details>
         <details><summary>ボードゲームをしない日に作業スペースとして使えますか？</summary><p class="a">はい。Wi-Fi・電源を使ってPC作業もできます。参加チケット会員の方は、ほかの会員がすでに予約している卓に参加する形でご利用いただけます（利用時間分のチケットが必要です）。コーヒーは全プランとも利用中無料です。</p></details>
         <details><summary>レーティングシステムとは何ですか？</summary><p class="a">会員どうしの対戦結果から、ゲームごとの腕前を数字で表す仕組みです。結果を登録するとレーティングが自動で上下し、ゲームごとのランキングと段位で確認できます。非会員ゲストはレーティングの対象外です。</p></details>
